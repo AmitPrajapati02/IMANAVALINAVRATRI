@@ -1,0 +1,39 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "predev": "node ../../scripts/free-api-port.js",
+    "prestart": "node ../../scripts/free-api-port.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "npm run test:unit",
+    "test:unit": "node src/tests/unit.test.js",
+    "test:e2e": "node src/tests/e2e-ima-donor-fee.test.js",
+    "test:integration": "node src/tests/integration.test.js",
+    "test:all": "npm run test:unit && npm run test:e2e",
+    "audit:ima-fees": "node src/scripts/audit-ima-donor-overcharges.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.20.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "form-data": "^4.0.6",
+    "jsonwebtoken": "^9.0.3",
+    "mssql": "^12.7.0",
+    "multer": "^2.3.0",
+    "nodemailer": "^9.1.0",
+    "razorpay": "^2.9.8",
+    "uuid": "^14.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

@@ -1,0 +1,108 @@
+/* Registration landing — 2×2 image grid aligned like reference layout */
+
+.register-landing-section.section {
+  padding: 2rem 0 2.5rem;
+}
+
+.register-landing-section .reg-org-toggle {
+  margin-bottom: 1.5rem;
+}
+
+.register-landing__container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.reg-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 1.75rem;
+  align-items: stretch;
+  justify-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.reg-image-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  line-height: 0;
+  aspect-ratio: 739 / 366;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.25s ease;
+  box-shadow: none;
+}
+
+.reg-image-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.reg-image-card:not(.is-disabled):hover {
+  transform: translateY(-4px);
+}
+
+.reg-image-card:not(.is-disabled):hover img {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+}
+
+.reg-image-card:not(.is-disabled):focus-visible {
+  outline: 3px solid var(--brand, #902727);
+  outline-offset: 3px;
+}
+
+.reg-image-card.reg-gated.is-disabled {
+  filter: grayscale(1);
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+}
+
+.reg-image-card.reg-gated.is-disabled img {
+  box-shadow: none;
+}
+
+.register-landing-section .gov-id-banner-wrap {
+  margin-top: 1.75rem;
+}
+
+@media (max-width: 900px) {
+  .reg-image-grid {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .register-landing-section.section {
+    padding: 1.5rem 0 2rem;
+  }
+
+  .reg-image-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .reg-image-card {
+    aspect-ratio: 739 / 366;
+    max-width: 100%;
+  }
+}

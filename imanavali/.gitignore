@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+uploads/Photos/*
+uploads/IdProofs/*
+!uploads/Photos/.gitkeep
+!uploads/IdProofs/.gitkeep
+*.log

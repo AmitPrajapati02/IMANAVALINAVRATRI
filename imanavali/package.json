@@ -1,0 +1,19 @@
+{
+  "name": "imanavali",
+  "private": true,
+  "scripts": {
+    "predev": "node scripts/free-api-port.js",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "prestart": "node scripts/free-api-port.js",
+    "build": "npm run build --prefix client",
+    "start": "npm run start --prefix server",
+    "test": "npm run test --prefix server",
+    "test:unit": "npm run test:unit --prefix server",
+    "test:e2e": "npm run test:e2e --prefix server",
+    "test:all": "npm run test:all --prefix server",
+    "audit:ima-fees": "npm run audit:ima-fees --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

@@ -1,0 +1,190 @@
+/* Account registration form — scoped layout (does not affect register landing cards) */
+
+.account-register .account-register__inner {
+  max-width: 840px;
+}
+
+.account-register .account-register__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.account-register .reg-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1.5rem;
+  align-items: start;
+}
+
+.account-register .form-field {
+  min-width: 0;
+}
+
+.account-register .form-field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text, #1a1a1a);
+  line-height: 1.35;
+  margin-bottom: 0;
+}
+
+.account-register .form-field .form-control,
+.account-register .form-field select.form-control,
+.account-register .form-field textarea.form-control {
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.account-register .form-field textarea.form-control {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.account-register .form-field input[type="file"].form-control,
+.account-register .form-field input[type="file"] {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.account-register .form-field small.text-muted {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.account-register .form-field.full {
+  grid-column: 1 / -1;
+}
+
+.account-register .account-register__alert {
+  margin-bottom: 1.25rem;
+}
+
+.account-register .donor-section {
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border, #e5e7eb);
+}
+
+.account-register .donor-section__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+  color: var(--text, #1a1a1a);
+}
+
+.account-register .donor-section__hint {
+  font-size: 0.875rem;
+  color: var(--muted, #6b7280);
+  margin: 0 0 1rem;
+}
+
+.account-register .donor-section__add {
+  margin-bottom: 1.25rem;
+}
+
+.account-register .donor-card {
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem 1rem;
+  margin-bottom: 1rem;
+  background: #fafafa;
+}
+
+.account-register .donor-card:last-of-type {
+  margin-bottom: 0;
+}
+
+.account-register .donor-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.account-register .donor-card__label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.account-register .form-footer-block {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border, #e5e7eb);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.account-register .payment-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  align-items: center;
+}
+
+.account-register .payment-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0;
+}
+
+.account-register .total-fee {
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(144, 39, 39, 0.06);
+  border-radius: 10px;
+  border: 1px solid rgba(144, 39, 39, 0.12);
+}
+
+.account-register .terms-field label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.account-register .terms-field input[type="checkbox"] {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.account-register .account-register__actions {
+  margin-top: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+.account-register .account-register__actions .btn-primary {
+  min-width: 200px;
+}
+
+@media (max-width: 640px) {
+  .account-register .reg-form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .account-register .donor-card {
+    padding: 1rem;
+  }
+
+  .account-register .account-register__actions .btn-primary {
+    width: 100%;
+    min-width: 0;
+  }
+}
