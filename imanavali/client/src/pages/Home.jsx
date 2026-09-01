@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useSiteScripts } from '../hooks/useSiteScripts';
 import banner1 from '../assets/img/Banner01.png';
-import banner2 from '../assets/img/Banner02.jpg';
-import banner3 from '../assets/img/Banner03.jpg';
+import banner2 from '../assets/img/Banner02.JPG';
+import banner3 from '../assets/img/Banner03.JPG';
 import navLogo from '../assets/img/navratri_logo_transparent.png';
 import img1 from '../assets/img/Img1.jpeg';
 import img2 from '../assets/img/IMG_02.JPG';
