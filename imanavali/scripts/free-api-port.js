@@ -3,6 +3,10 @@
  * Usage: node scripts/free-api-port.js [port]
  * Default port: 3001 (or PORT env)
  */
+if (process.env.RENDER || process.env.NODE_ENV === 'production') {
+  process.exit(0);
+}
+
 const { execSync } = require('child_process');
 
 const port = parseInt(process.argv[2] || process.env.PORT || '3001', 10);

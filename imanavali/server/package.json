@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "predev": "node ../../scripts/free-api-port.js",
-    "prestart": "node ../../scripts/free-api-port.js",
+    "predev": "node ../scripts/free-api-port.js",
+    "prestart": "node ../scripts/free-api-port.js",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "test": "npm run test:unit",

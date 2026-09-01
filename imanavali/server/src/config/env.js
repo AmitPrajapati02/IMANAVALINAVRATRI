@@ -1,9 +1,9 @@
 const path = require('path');
 const dotenv = require('dotenv');
 
-// Always load from imanavali/.env (project root), regardless of cwd
+// Load imanavali/.env locally; on Render secrets come from Environment Variables.
 const envPath = path.resolve(__dirname, '../../..', '.env');
-dotenv.config({ path: envPath });
+dotenv.config({ path: envPath, override: false });
 
 module.exports = {
   port: parseInt(process.env.PORT || '3001', 10),

@@ -49,8 +49,14 @@ app.get('/api/health/db', async (req, res) => {
   try {
     const { getPool } = require('./services/db');
     const pool = await getPool();
-    await pool.request().query('SELECT 1 AS ok');
-    res.json({ ok: true, database: 'connected' });
+    const result = await pool.request().query('SELECT DB_NAME() AS db, @@SERVERNAME AS server');
+    const row = result.recordset?.[0] || {};
+    res.json({
+      ok: true,
+      database: 'connected',
+      db: row.db || null,
+      server: row.server || null,
+    });
   } catch (err) {
     console.error('Database health check failed:', err.message);
     res.status(503).json({ ok: false, database: 'error', error: err.message });
@@ -70,8 +76,9 @@ if (require('fs').existsSync(clientDist)) {
   });
 }
 
-app.listen(config.port, () => {
-  console.log(`IMA Navratri API running on port ${config.port}`);
+const host = '0.0.0.0';
+app.listen(config.port, host, () => {
+  console.log(`IMA Navratri API running on http://${host}:${config.port}`);
 });
 
 module.exports = app;
