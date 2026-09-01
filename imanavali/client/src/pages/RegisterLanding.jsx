@@ -80,7 +80,16 @@ export default function RegisterLanding() {
       await homeApi.bookNow(mobile, selectedType);
       navigate('/account/register');
     } catch (err) {
-      setError(err.response?.data?.error || 'Unable to proceed. Try again.');
+      const apiError = err.response?.data?.error;
+      const status = err.response?.status;
+      if (apiError) {
+        setError(apiError);
+      } else if (!err.response) {
+        setError('Cannot reach the server. The API may be starting up — wait 1 minute and try again.');
+      } else {
+        setError(`Server error (${status || 'unknown'}). Please try again.`);
+      }
+      console.error('Registration mobile check failed:', err.response?.data || err.message);
     }
   }
 

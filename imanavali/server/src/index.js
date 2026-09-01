@@ -45,6 +45,18 @@ app.get('/api/health', (req, res) => {
   res.json({ ok: true });
 });
 
+app.get('/api/health/db', async (req, res) => {
+  try {
+    const { getPool } = require('./services/db');
+    const pool = await getPool();
+    await pool.request().query('SELECT 1 AS ok');
+    res.json({ ok: true, database: 'connected' });
+  } catch (err) {
+    console.error('Database health check failed:', err.message);
+    res.status(503).json({ ok: false, database: 'error', error: err.message });
+  }
+});
+
 app.use(async (err, req, res, next) => {
   await insertErrorLog(err.message, err.stack);
   res.status(500).json({ error: err.message || 'Internal server error' });
