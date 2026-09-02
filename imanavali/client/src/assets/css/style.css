@@ -938,8 +938,141 @@ body.menu-open .nav-toggle .bar:nth-child(3) { transform: rotate(-45deg) transla
 
 /* Footer */
 .site-footer { background: var(--brand); border-top: 1px solid var(--border); color: #fff; }
-.footer-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; padding: 36px 0; }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.2); padding: 12px 0; text-align: center; color: rgba(255,255,255,0.8); }
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 40px 0 32px;
+}
+.site-footer h4 {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+}
+.site-footer p,
+.site-footer li {
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+}
+.site-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-footer .footer-links li + li {
+  margin-top: 4px;
+}
+.site-footer .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 4px 0;
+  text-decoration: none;
+}
+.site-footer .footer-links a:hover,
+.site-footer .footer-links a:focus-visible {
+  text-decoration: underline;
+}
+.site-footer a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: #fff;
+}
+.site-footer .social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 0 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.footer-copy {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+.footer-legal a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.08);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.footer-legal a:hover,
+.footer-legal a:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Policy pages */
+.policy-section {
+  padding: 48px 0 64px;
+}
+.policy-content {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+.policy-content p {
+  margin: 0 0 1rem;
+  color: var(--text);
+  font-size: clamp(0.95rem, 2.8vw, 1rem);
+  line-height: 1.75;
+}
+.policy-content h3 {
+  margin: 1.75rem 0 0.75rem;
+  font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+  font-weight: 600;
+  color: var(--brand);
+  line-height: 1.35;
+}
+.policy-content h3:first-child {
+  margin-top: 0;
+}
+.policy-content ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+.policy-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.65;
+}
+.policy-content a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-word;
+}
+.policy-content a:hover,
+.policy-content a:focus-visible {
+  color: var(--brand-600);
+}
 
 /* Utilities */
 .content { max-width: 800px; }
@@ -1030,7 +1163,25 @@ body.menu-open .nav-toggle .bar:nth-child(3) { transform: rotate(-45deg) transla
 @media (max-width: 900px) {
   .grid-2 { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 0 24px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .footer-legal {
+    justify-content: center;
+  }
+  .about-hero {
+    padding: 72px 0;
+  }
+  .policy-section {
+    padding: 32px 0 48px;
+  }
 }
 @media (max-width: 600px) {
   .grid-3 { grid-template-columns: 1fr; }
@@ -1041,6 +1192,31 @@ body.menu-open .nav-toggle .bar:nth-child(3) { transform: rotate(-45deg) transla
   .logo-img { height: 28px; }
   .logo-text { font-size: 18px; }
   .photo-slider .track { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid {
+    gap: 20px;
+    padding: 28px 0 20px;
+  }
+  .site-footer h4 {
+    font-size: 1rem;
+  }
+  .footer-legal {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer-legal a {
+    width: 100%;
+    justify-content: center;
+  }
+  .policy-content {
+    padding-inline: 2px;
+  }
+  .policy-content ul {
+    padding-left: 1.1rem;
+  }
+  .about-hero {
+    padding: 56px 0;
+  }
 }
 
 /* Home page — sticky floating registration CTA */

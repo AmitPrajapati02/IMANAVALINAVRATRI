@@ -2,7 +2,7 @@ import StaticPage from './StaticPage';
 
 export function PrivacyPolicy() {
   return (
-    <StaticPage title="Privacy Policy">
+    <StaticPage title="Privacy Policy" policy>
       <p>
         This privacy policy outlines how Indian Medical Association, Vadodara collects and safeguards the
         information you provide when using our website. We are dedicated to ensuring your privacy is protected.
@@ -107,7 +107,7 @@ export function PrivacyPolicy() {
 
 export function RefundPolicy() {
   return (
-    <StaticPage title="Refund Policy">
+    <StaticPage title="Refund Policy" policy>
       <p>
         We extend our gratitude for selecting Indian Medical Association, Vadodara for your services. Your trust
         means a great deal, and our commitment is to ensure your utmost satisfaction. Please take a moment to
@@ -151,7 +151,7 @@ export function RefundPolicy() {
 
 export function FAQ() {
   return (
-    <StaticPage title="FAQ">
+    <StaticPage title="FAQ" policy>
       <p><strong>Q: What ID is required?</strong><br />A: Valid government photo ID (Aadhar with address) is mandatory.</p>
       <p><strong>Q: Can I register multiple players?</strong><br />A: Limits apply per mobile number based on player category.</p>
     </StaticPage>
@@ -160,7 +160,7 @@ export function FAQ() {
 
 export function TermsCondition() {
   return (
-    <StaticPage title="Terms and Conditions">
+    <StaticPage title="Terms and Conditions" policy>
       <p>By registering, you agree to festival rules, verification requirements, and venue guidelines.</p>
     </StaticPage>
   );
@@ -168,7 +168,7 @@ export function TermsCondition() {
 
 export function CancellationPolicy() {
   return (
-    <StaticPage title="Cancellation Policy">
+    <StaticPage title="Cancellation Policy" policy>
       <p>Cancellation and payment status updates are recorded in the registration system. Contact support for queries.</p>
     </StaticPage>
   );

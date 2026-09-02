@@ -67,7 +67,7 @@ export default function Layout() {
           </div>
           <div>
             <h4>Quick Links</h4>
-            <ul>
+            <ul className="footer-links">
               <li><Link to="/privacy-policy">Privacy Policy</Link></li>
               <li><Link to="/refund-policy">Refund Policy</Link></li>
               <li><Link to="/faq">FAQ</Link></li>
@@ -77,7 +77,14 @@ export default function Layout() {
           </div>
         </div>
         <div className="container footer-bottom">
-          <p>© <span id="year">{new Date().getFullYear()}</span> IMA Navli Navratri. All rights reserved.</p>
+          <p className="footer-copy">
+            © <span id="year">{new Date().getFullYear()}</span> IMA Navli Navratri. All rights reserved.
+          </p>
+          <nav className="footer-legal" aria-label="Legal">
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/refund-policy">Refund Policy</Link>
+            <Link to="/terms-condition">Terms &amp; Conditions</Link>
+          </nav>
         </div>
       </footer>
       <div className="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
